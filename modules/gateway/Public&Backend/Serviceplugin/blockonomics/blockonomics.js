@@ -44,7 +44,7 @@ export const createTransaction = async (options, context) => {
    const btcAmount = orderamount / btcprice;
     let inserttxn = {
       "title": newAddress,
-      "plugintxn": "e89b-12d3-a456-42665",
+      "plugintxn": newAddress,
       "wixtxn":options.wixTransactionId,
     };
 
@@ -52,7 +52,7 @@ export const createTransaction = async (options, context) => {
     
     return {
         //reasonCode: 5009,
-        pluginTransactionId: "e89b-12d3-a456-42665",
+        pluginTransactionId: newAddress,
         redirectUrl: `https://aishwaryaadyanthay.wixsite.com/my-site/paymentpage?address=${newAddress}&price=${btcAmount}&redirect=${options.order.returnUrls.successUrl}`
     };
 };
