@@ -4,7 +4,7 @@ import { Permissions, webMethod } from "wix-web-module";
 import { fetch } from "wix-fetch";
 import wixData from 'wix-data';
 
-const api_key = 'aBIUmjP6wLxaUkqoubBmys2B0z1SIaqs6c0XbNlyl8U';
+
 
 /**
  * This payment plugin endpoint is triggered when a merchant provides required data to connect their PSP account to a Wix site.
