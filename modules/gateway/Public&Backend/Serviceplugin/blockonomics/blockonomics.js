@@ -53,7 +53,7 @@ export const createTransaction = async (options, context) => {
     return {
         //reasonCode: 5009,
         pluginTransactionId: newAddress,
-        redirectUrl: `https://aishwaryaadyanthay.wixsite.com/my-site/paymentpage?address=${newAddress}&price=${btcAmount}&redirect=${options.order.returnUrls.successUrl}`
+        redirectUrl: `{"enter your site URL"}/paymentpage?address=${newAddress}&price=${btcAmount}&redirect=${options.order.returnUrls.successUrl}`
     };
 };
 /**
