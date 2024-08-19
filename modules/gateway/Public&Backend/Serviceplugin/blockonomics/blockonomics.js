@@ -24,8 +24,8 @@ export const connectAccount = async (options, context) => {
             apikey: options.credentials.apikey,
             callbackurl: options.credentials.callbackurl
         },
-        accountId: '1o3k5234-2342kk3343',
-        accountName: 'aishwarya@blockonomics.com'
+        accountId: '{Enter your account id }',
+        accountName: '{Enter your email id}'
     };
 };
 /**
