@@ -33,38 +33,80 @@ https://www.wix.com/velo/reference/wix-http-functions
 
 // The following is an example of an HTTP function, which gets the product of 2 operands. Adapt the code below for your specific use case.
 
-import { ok, badRequest } from 'wix-http-functions';
+import { ok, badRequest, notFound } from 'wix-http-functions';
 import wixPaymentProviderBackend from 'wix-payment-provider-backend';
 import wixData from "wix-data";
 
 export async function get_blockonomicscallback(request) {
- 
-   const response = {
-       "headers": {
-           "Content-Type": "application/json"
-       }
-   };
 
-   
+  const response = {
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  };
 
-     const addr = request.query["addr"];
+  const addr = request.query["addr"];
+  const status = request.query["status"];
+  const txid = request.query["txid"];
+  const value = request.query["value"];
+  const secret = request.query["secret"];
 
-      const object = await wixData.query("blockonomics_transaction").eq("title", addr).find()
-      
-      const submitEventRequest = {
-        event: {
-          transaction : {
-            wixTransactionId: object.items[0].wixtxn,
-            pluginTransactionId: object.items[0].plugintxn,
-          }
-        }
-      };
-       await wixPaymentProviderBackend.submitEvent(submitEventRequest);
+  const configObject = await wixData.query("blockonomics_config").eq("title", secret).find()
+  
+  if (configObject.items.length === 0) {
+    const body = "Can't find it!";
+    return notFound({ body: body });
+  }
 
-       response.body = {
-          
-       };
-       return ok(response);
-       
-   
+
+  const object = await wixData.query("blockonomics_transaction").eq("title", addr).find()
+  const entry = object.items[0];
+
+  let toUpdate = {
+    ...entry,
+    "status": status,
+    "txid": txid,
+    "value": value
+  };
+
+  await wixData.update("blockonomics_transaction", toUpdate);
+
+  const submitEventRequest = {
+    event: {
+      transaction : {
+        wixTransactionId: entry.wixtxn,
+        pluginTransactionId: entry.plugintxn,
+      }
+    }
+  };
+
+  if (status === "0") {
+    submitEventRequest.event.transaction.reasonCode = 5005;
+  }
+
+  await wixPaymentProviderBackend.submitEvent(submitEventRequest);
+
+  response.body = {};
+  return ok(response);
+}
+
+
+export async function get_paymentstatus(request) {
+
+  const response = {
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  };
+
+  const addr = request.query["addr"];
+
+  const object = await wixData.query("blockonomics_transaction").eq("title", addr).find();
+  const entry = object.items[0];  
+
+  response.body = {
+    entry: entry
+  };
+
+  return ok(response);
 }
