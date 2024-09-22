@@ -2,6 +2,11 @@ import * as paymentProvider from 'interfaces-psp-v1-payment-service-provider';
 
 /** @returns {import('interfaces-psp-v1-payment-service-provider').PaymentServiceProviderConfig} */
 export function getConfig() {
+    // Customer Creates a blockonomics store with zpub, address and callback url.
+        // where to get callback url?
+        // Get wix store address (https://aishwaryaadyanthay.wixsite.com/my-site)
+        // Our url extension (_functions/blockonomicscallback?secret=123353)
+
     return {
         title: 'Blockonomics Payments', // Ensure the title is a string
         paymentMethods: [
@@ -30,9 +35,8 @@ export function getConfig() {
             },
             {
                 simpleField: {
-                    name: 'callbackurl',
-                    label: 'Blockonomics Callback URL',
-                    
+                    name: 'secret',
+                    label: 'Secret'
                 }
             }
         ]
