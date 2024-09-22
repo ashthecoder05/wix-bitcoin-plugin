@@ -1,10 +1,14 @@
 import * as paymentProvider from 'interfaces-psp-v1-payment-service-provider';
 import wixPaymentProviderBackend from 'wix-payment-provider-backend';
+import wixSecretsBackend from "wix-secrets-backend";
+
+
+
 import { Permissions, webMethod } from "wix-web-module";
 import { fetch } from "wix-fetch";
 import wixData from 'wix-data';
 
-
+const GET_CALLBACKS_URL = 'https://wwww.blockonomics.co/api/address?&no_balance=true&only_xpub=true&get_callback=true';
 
 /**
  * This payment plugin endpoint is triggered when a merchant provides required data to connect their PSP account to a Wix site.
@@ -13,20 +17,31 @@ import wixData from 'wix-data';
  * @param {import('interfaces-psp-v1-payment-service-provider').Context} context
  * @returns {Promise<import('interfaces-psp-v1-payment-service-provider').ConnectAccountResponse | import('interfaces-psp-v1-payment-service-provider').BusinessError>}
  */
-export const connectAccount = async (options, context) => {
-    // goto our blockonomics site, and verify the details then return in the below format so that 
-    // wix can connect with the associated account id.
+export const connectAccount = async (options, context) => {  
+  const apiKey = options.credentials.apikey;
+  const secret = options.credentials.secret;
 
-    // create a payment page
+  try {
+    await testSetup(apiKey, secret);
+  } catch (e) {
+    throw "Test setup Failed: " + e
+  }
 
-    return {
-        credentials: {
-            apikey: options.credentials.apikey,
-            callbackurl: options.credentials.callbackurl
-        },
-        accountId: '{Enter your account id }',
-        accountName: '{Enter your email id}'
-    };
+  let insertconfig = {
+    "title": secret,
+    "apikey": apiKey
+  };
+
+  await wixData.insert("blockonomics_config", insertconfig)
+
+  return {
+      credentials: {
+          apikey: apiKey,
+          secret: secret
+      },
+      accountId: secret,
+      accountName: apiKey
+  };
 };
 /**
  * This payment plugin endpoint is triggered when a buyer pays on a Wix site.
@@ -36,24 +51,24 @@ export const connectAccount = async (options, context) => {
  * @returns {Promise<import('interfaces-psp-v1-payment-service-provider').CreateTransactionResponse | import('interfaces-psp-v1-payment-service-provider').BusinessError>}
  */
 export const createTransaction = async (options, context) => {
-   
-  const  newAddress = await generateNewAddress();
+  const apiKey = options.merchantCredentials.apikey;
+  const  newAddress = await generateNewAddress(apiKey);
   
    const btcprice = await getBtcPrice(options.order.description.currency);
    const orderamount = options.order.description.totalAmount / 100;
    const btcAmount = orderamount / btcprice;
     let inserttxn = {
       "title": newAddress,
-      "plugintxn": newAddress,
-      "wixtxn":options.wixTransactionId,
+      "plugintxn": "e89b-12d3-a456-42665",
+      "wixtxn":options.wixTransactionId
     };
 
     await wixData.insert("blockonomics_transaction", inserttxn)
     
     return {
         //reasonCode: 5009,
-        pluginTransactionId: newAddress,
-        redirectUrl: `{"enter your site URL"}/paymentpage?address=${newAddress}&price=${btcAmount}&redirect=${options.order.returnUrls.successUrl}`
+        pluginTransactionId: "e89b-12d3-a456-42665",
+        redirectUrl: `https://aishwaryaadyanthay.wixsite.com/my-site/paymentpage?address=${newAddress}&price=${btcAmount}&redirect=${options.order.returnUrls.pendingUrl}`
     };
 };
 /**
@@ -71,11 +86,11 @@ export const refundTransaction = async (options, context) => {
 
 const generateNewAddress = webMethod(
   Permissions.Anyone,
-  async () => {
+  async (apiKey) => {
     const fetchOptions = {
       method: "post",
       headers: {
-        'Authorization': 'Bearer ' + api_key,
+        'Authorization': 'Bearer ' + apiKey,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({})
@@ -92,6 +107,56 @@ const generateNewAddress = webMethod(
 
     const data = await response.json();
     return data.address;
+  },
+);
+
+const testBTCCallback = webMethod(
+  Permissions.Anyone,
+  async (apiKey) => {
+    const fetchOptions = {
+      method: "get",
+      headers: {
+        'Authorization': 'Bearer ' + apiKey,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({})
+    };
+
+    const response = await fetch(
+      'https://www.blockonomics.co/api/address?&no_balance=true&only_xpub=true&get_callback=true',
+      fetchOptions,
+    );
+
+    if (!response.ok) {
+      throw new Error('Network response was not ok ' + response.statusText);
+    }
+
+    const data = await response.json();
+    return data;
+  },
+);
+
+const testSetup = webMethod(
+  Permissions.Anyone,
+  async (apiKey, secret) => {
+    if (!apiKey) {
+      throw "No API key found"
+    }
+    if (!secret) {
+      throw "No Secret found"
+    }
+
+    try {
+      await testBTCCallback(apiKey);
+    } catch (e) {
+      throw "Error while testing callback " + e
+    }
+
+    try {
+      await generateNewAddress(apiKey);
+    } catch (e) {
+      throw "Error while generating new address"
+    }
   },
 );
 
