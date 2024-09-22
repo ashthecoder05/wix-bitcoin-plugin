@@ -1,6 +1,8 @@
 import wixLocationFrontend from "wix-location-frontend";
 import wixLocation from 'wix-location';
 import wixData from "wix-data";
+import wixWindowFrontend from "wix-window-frontend";
+import wixFetch from "wix-fetch";
 
 
 $w.onReady(function () {
@@ -11,17 +13,59 @@ $w.onReady(function () {
     const dataset = "Blockonomics_order";
 
     console.log("New Address:", addresses);
-         console.log ("Price:",  price );
+    console.log ("Price:",  price );
 
-     $w("#input1").value = addresses; 
-     $w("#input2").value = price; 
+    // Add a heading to the page
+    $w("#text1").text = "Blockonomics Payment Pages";
 
-
-
-
-
-    // Set up the payment button click event
-    $w("#button1").onClick((event) => {
-        wixLocation.to(object.redirect);
+    // Set the values of the input fields and add a copy button next to each
+     $w("#text2").text = "Address";
+    $w("#input1").value = addresses; 
+    $w("#button2").onClick(() => {
+        wixWindowFrontend
+          .copyToClipboard(addresses)
+          .then(() => {
+            console.log("Address copied to clipboard");
+          })
+          .catch((err) => {
+            console.error("Failed to copy address to clipboard", err);
+          });
     });
+
+    
+     $w("#text3").text = "BTC Price";
+    $w("#input2").value = price; 
+    $w("#button3").onClick(() => {
+        wixWindowFrontend
+          .copyToClipboard(price)
+          .then(() => {
+            console.log("Address copied to clipboard");
+          })
+          .catch((err) => {
+            console.error("Failed to copy address to clipboard", err);
+          });
+    });
+    
+
+
+    let intervalId = null;
+
+    intervalId = setInterval(async () => {
+      try {
+        const url = "https://aishwaryaadyanthay.wixsite.com/my-site/_functions/paymentstatus?addr=" + addresses;
+        const response = await fetch(url, { method: "get" });
+        
+        if (response.ok) {
+          const json = await response.json();
+
+          if (json.entry && json.entry.status) {
+            clearInterval(intervalId);
+            wixLocation.to(object.redirect);
+          }
+        }
+      } catch (e) {
+        clearInterval(intervalId);
+      }
+
+    }, 5000);
 });
