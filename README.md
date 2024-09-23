@@ -35,9 +35,15 @@ The process has 3 steps.
 
 2. Implement the callback URL
 - In our the Public&Backend>Backend folder you will find a file called http-fuctions.js you need to create the same file in velo as below
-- <img width="397" alt="image" src="https://github.com/user-attachments/assets/74bcc9d4-d507-4436-ab43-2be118253c9c">
+- <img width="397" alt="image" src="https://github.com/user-attachments/assets/41585b33-736e-4363-afd8-c8d9f4159cc4">
 
-3.
+
+3. Implement the payment page
+- In this step, you  will need to create a file as paymentPage.js in the Wix site editor 
+<img width="441" alt="image" src="https://github.com/user-attachments/assets/fb9a4c16-ae64-4fff-8125-a3b0d482f1d0">
+- Then copy code from the blockonomics github  location at  Pagecode > MainPage > PaymentPage.js
+- 
+
 
   
 
