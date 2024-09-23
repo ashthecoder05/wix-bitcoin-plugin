@@ -28,3 +28,6 @@ The process has 3 steps.
 1. Implement your plugin with custom code.
 - In the new plugin folder, edit `blockonomics-config.js` and `blockonomics.js`
 <img width="532" alt="image" src="https://github.com/user-attachments/assets/9ceb7686-5ed4-443f-95ca-bbac92ce1438">
+- Then go to our Blockonomic/Wix-Bitcoin-plugin GitHub repo inside which you will find  folder Public&Backend>Serviceplugin>blockonomics inside which you will copy code of  blockonomics-config.js and blockonomics.js paste in the respevctive file created in the wix
+- Inside the blockonomics.js you will have to make the changes in the code at line 77 in the  redirectUrl: add your site URL to exsisting url for example 
+- 
