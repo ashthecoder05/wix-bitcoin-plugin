@@ -32,5 +32,12 @@ The process has 3 steps.
 - Inside the blockonomics.js you will have to make the changes in the code at line 77 in the  redirectUrl: add your site URL to exsisting url for example 
 - Once this is implemented you will be able to see the payment method to be displayed in Setting> Accetpayment it will be visible as below 
 - <img width="1441" alt="image" src="https://github.com/user-attachments/assets/8764f604-2308-45b6-af1f-7b8013e15e80">
+
+2. Implement the callback URL
+- In our the Public&Backend>Backend folder you will find a file called http-fuctions.js you need to create the same file in velo as below
+- <img width="397" alt="image" src="https://github.com/user-attachments/assets/74bcc9d4-d507-4436-ab43-2be118253c9c">
+
+3.
+
   
 
