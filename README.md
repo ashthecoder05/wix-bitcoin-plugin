@@ -16,7 +16,7 @@ The process has 3 steps.
 <img width="396" alt="image" src="https://github.com/user-attachments/assets/75dce07b-7aaf-4262-8a2f-b5bee905752f">
 
 
-- Hover over **Service Plugins** and click
+- Hover over **Service Plugins** and click on + 
 - Select **Payment**.
 
 <img width="433" alt="image" src="https://github.com/user-attachments/assets/fb379d04-4987-41e8-985b-6600e7a0893a">
