@@ -65,23 +65,53 @@ The process has 3 steps.
 - a) <img width="355" alt="image" src="https://github.com/user-attachments/assets/11fd016e-0fbb-4435-a082-ddac779f03a4">
 - b) <img width="681" alt="image" src="https://github.com/user-attachments/assets/1ff4a5fb-00f9-4398-abda-f1b6344ce8d6">
 
+
+
 4. Create a database name "blockonomics_config" and "blockonomics_transaction"
 - To create a database you need select Database> Your Collections > + button > Create Collection
 - <img width="497" alt="image" src="https://github.com/user-attachments/assets/1fb44a55-db30-4961-ab34-cf9a7b1c7d06">
-
 - Need to create two database tables one table "blockonomics_config" with fields for configs records as shown below
 - <img width="533" alt="image" src="https://github.com/user-attachments/assets/6ac02f8d-d411-4809-a2cd-ab5736ebe9f9">
 
-- Other table blockonomics_transaction for saving the transaction details with fields for transaction records as shown below
+- Declare the field name and field Types  as image below 
+- secret
+- <img width="622" alt="image" src="https://github.com/user-attachments/assets/62fa15e9-4f63-4358-ae23-655b5e877039">
 
-<img width="1012" alt="image" src="https://github.com/user-attachments/assets/c9e4f77e-5a72-41a9-beeb-360a41bd9191">
+- apikey
+- <img width="622" alt="image" src="https://github.com/user-attachments/assets/2e4e910f-b317-421a-95c2-99940286124e">
+
+- Other table blockonomics_transaction for saving the transaction details with fields for transaction records as shown below
+- <img width="1012" alt="image" src="https://github.com/user-attachments/assets/c9e4f77e-5a72-41a9-beeb-360a41bd9191">
+
+- Declare the field name and field Types  as image below
+- addr
+- <img width="622" alt="image" src="https://github.com/user-attachments/assets/fccdd8f6-31df-4dc6-8955-62ffda3ba71e">
+- plugintxn
+- <img width="622" alt="image" src="https://github.com/user-attachments/assets/577961bf-fcf2-44fa-9b69-d0d6d2c2eef6">
+- wixtxn
+- <img width="622" alt="image" src="https://github.com/user-attachments/assets/9f4f4b75-92ff-45f5-92d9-7b32e0d39901">
+- status
+- <img width="622" alt="image" src="https://github.com/user-attachments/assets/512124ab-de94-4dd1-bbe8-affebfe48dff">
+- txid
+- <img width="622" alt="image" src="https://github.com/user-attachments/assets/a7d4ce81-a7f7-4529-ab7b-a96c2f8afdb8">
+- value
+- <img width="622" alt="image" src="https://github.com/user-attachments/assets/79edb9c0-ff35-44a4-8e3c-edb8ec166a6f">
+    
+
 
 ## ### Setting up the blockonomics store for wix website :
-- Manual method:
-a) Customer gets their Wix store address (e.g., https://example.wixsite.com/my-site)
-b) Our URL extension is added (_functions/blockonomicscallback?secret=)
-c) Customer generates a secret and adds it at the end of the URL
-Example: https://example.wixsite.com/my-site/_functions/blockonomicscallback?secret=123353
+1. Setup the API key and Secret
+- <img width="1228" alt="image" src="https://github.com/user-attachments/assets/0ae888f0-253c-4455-a625-9fa6736df834">
+- Add the api key which you get from blockonomics site and add it to setting page
+- Add the secret  of your choice by your choice  for example it can abdhdhjdhdn    
+- <img width="1254" alt="image" src="https://github.com/user-attachments/assets/b40a0f9e-5909-41e0-a372-52632221248f">
+2. Create the callback URL:
+- Customer gets their Wix store address (e.g., https://example.wixsite.com/my-site)
+- Our URL extension is added (_functions/blockonomicscallback?secret=)
+- Customer generates a secret and adds it at the end of the URL
+- Example: https://example.wixsite.com/my-site/_functions/blockonomicscallback?secret=123353
+3. Add the callback URL to the blockonomics store which you have created in the previous steps 2
+4. That is how the blockonomics payment is setup on the wix store 
   
   
 
