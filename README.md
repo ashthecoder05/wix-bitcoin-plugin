@@ -53,8 +53,8 @@ The process has 3 steps.
 - Replace the input id  in the file PaymentPage.js  code at line 23  and 37 in the file  which is shown in the image below with input id you get from the input box created on the wix page 
 - <img width="440" alt="image" src="https://github.com/user-attachments/assets/7d89cf76-af46-4072-800b-c0ff46a06e1b">
 - <img width="440" alt="image" src="https://github.com/user-attachments/assets/1d5bbabc-21af-4c26-8fd2-0b10aa3b0cc1">
-- Same way create the  three labels one for the heading and other two label for "Address" & "Price " to get the label ID as shown below you will get the label ID as #text1
-- 
+- The same way create the  three labels one for the heading and the other two labels for "Address" & "Price ". To get the label ID as shown below you will get the label ID as #text1
+- <img width="1083" alt="image" src="https://github.com/user-attachments/assets/e9b9daa6-c063-448d-8851-3c513d906481">
 - Replace the heading label id at code line number 19 as shown in the image below a and b
 - a) <img width="714" alt="image" src="https://github.com/user-attachments/assets/efcfba64-65da-4647-89e9-e7753f0361dd">
 - b) <img width="686" alt="image" src="https://github.com/user-attachments/assets/1e25ab2c-4407-4dc4-966d-b9b06bcfcee0">
@@ -65,14 +65,7 @@ The process has 3 steps.
 - a) <img width="355" alt="image" src="https://github.com/user-attachments/assets/11fd016e-0fbb-4435-a082-ddac779f03a4">
 - b) <img width="681" alt="image" src="https://github.com/user-attachments/assets/1ff4a5fb-00f9-4398-abda-f1b6344ce8d6">
 
-
-
-  
-  
-
-
-4. Create a database bl
-
+4. Create a database name "" and ""
 ## ### Setting up the blockonomics store for wix website :
 - Manual method:
 a) Customer gets their Wix store address (e.g., https://example.wixsite.com/my-site)
