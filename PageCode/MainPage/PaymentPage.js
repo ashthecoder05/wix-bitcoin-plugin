@@ -52,7 +52,7 @@ $w.onReady(function () {
 
     intervalId = setInterval(async () => {
       try {
-        const url = "https://aishwaryaadyanthay.wixsite.com/my-site/_functions/paymentstatus?addr=" + addresses;
+        const url = "https://"YOUR-SITE-URL"/my-site/_functions/paymentstatus?addr=" + addresses;
         const response = await fetch(url, { method: "get" });
         
         if (response.ok) {
