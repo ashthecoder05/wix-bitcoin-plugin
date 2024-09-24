@@ -34,16 +34,44 @@ The process has 3 steps.
 - <img width="1441" alt="image" src="https://github.com/user-attachments/assets/8764f604-2308-45b6-af1f-7b8013e15e80">
 
 2. Implement the callback URL
-- In our the Public&Backend>Backend folder you will find a file called http-fuctions.js you need to create the same file in velo as below
+- In our the Public&Backend>Backend folder you will find a file called http-fuctions.js you need to create the same file in wix studio as below
 - <img width="397" alt="image" src="https://github.com/user-attachments/assets/41585b33-736e-4363-afd8-c8d9f4159cc4">
-
+- You need to copy the code from Public&Backend > Backend >  http-fuctions.js file 
 
 3. Implement the payment page
 - In this step, you  will need to create a file as paymentPage.js in the Wix site editor 
 - <img width="441" alt="image" src="https://github.com/user-attachments/assets/fb9a4c16-ae64-4fff-8125-a3b0d482f1d0">
 - Then copy code from the blockonomics github  location at  Pagecode > MainPage > PaymentPage.js
 -  In the PaymentPage.js at line 55 replace the value of variable url with your site value to the exsisting site
--  There are few more manual change you will need to do is create a two input box and get the inputbox  name from wix editor and replace the name in your code
+-  There are few more manual change you will need to do is create a two input box and label from wix editor as shown in the image below 
+- <img width="1062" alt="image" src="https://github.com/user-attachments/assets/317f6ed2-15cf-43b8-90bd-d97c6d94c3a7">
+-  To create a input box you need follow the steps as shown in the screenshot below 
+- <img width="1339" alt="image" src="https://github.com/user-attachments/assets/ac719c9b-6eea-43d4-8499-e0b3ebe51ef6">
+- Once both the  Input box  is created you need to get input box id and paste it into the code at the respective place.
+- For example  first image shows how to get input box id  as #input3 in the below image same way do it for the input box 2 as we need two input box one to display the address and other for price 
+- <img width="440" alt="image" src="https://github.com/user-attachments/assets/9de6a380-52ba-4bb4-a0a0-7deb1440c40d">
+- Replace the input id  in the file PaymentPage.js  code at line 23  and 37 in the file  which is shown in the image below with input id you get from the input box created on the wix page 
+- <img width="440" alt="image" src="https://github.com/user-attachments/assets/7d89cf76-af46-4072-800b-c0ff46a06e1b">
+- <img width="440" alt="image" src="https://github.com/user-attachments/assets/1d5bbabc-21af-4c26-8fd2-0b10aa3b0cc1">
+- Same way create the  three labels one for the heading and other two label for "Address" & "Price " to get the label ID as shown below you will get the label ID as #text1
+- 
+- Replace the heading label id at code line number 19 as shown in the image below a and b
+- a) <img width="714" alt="image" src="https://github.com/user-attachments/assets/efcfba64-65da-4647-89e9-e7753f0361dd">
+- b) <img width="686" alt="image" src="https://github.com/user-attachments/assets/1e25ab2c-4407-4dc4-966d-b9b06bcfcee0">
+- Replace the Address label id at code line number 22 as shown in the image below a and b
+- a) <img width="284" alt="image" src="https://github.com/user-attachments/assets/4272bed8-ee88-4a27-ac05-68c990cc5584">
+- b) <img width="375" alt="image" src="https://github.com/user-attachments/assets/4685c5be-862a-4976-954d-880067b9f46a">
+- Replace the Address label id at code line number 36 as shown in the image below a and b
+- a) <img width="355" alt="image" src="https://github.com/user-attachments/assets/11fd016e-0fbb-4435-a082-ddac779f03a4">
+- b) <img width="681" alt="image" src="https://github.com/user-attachments/assets/1ff4a5fb-00f9-4398-abda-f1b6344ce8d6">
+
+
+
+  
+  
+
+
+4. Create a database bl
 
 ## ### Setting up the blockonomics store for wix website :
 - Manual method:
