@@ -65,7 +65,17 @@ The process has 3 steps.
 - a) <img width="355" alt="image" src="https://github.com/user-attachments/assets/11fd016e-0fbb-4435-a082-ddac779f03a4">
 - b) <img width="681" alt="image" src="https://github.com/user-attachments/assets/1ff4a5fb-00f9-4398-abda-f1b6344ce8d6">
 
-4. Create a database name "" and ""
+4. Create a database name "blockonomics_config" and "blockonomics_transaction"
+- To create a database you need select Database> Your Collections > + button > Create Collection
+- <img width="497" alt="image" src="https://github.com/user-attachments/assets/1fb44a55-db30-4961-ab34-cf9a7b1c7d06">
+
+- Need to create two database tables one table "blockonomics_config" with fields for configs records as shown below
+- <img width="533" alt="image" src="https://github.com/user-attachments/assets/6ac02f8d-d411-4809-a2cd-ab5736ebe9f9">
+
+- Other table blockonomics_transaction for saving the transaction details with fields for transaction records as shown below
+
+<img width="1012" alt="image" src="https://github.com/user-attachments/assets/c9e4f77e-5a72-41a9-beeb-360a41bd9191">
+
 ## ### Setting up the blockonomics store for wix website :
 - Manual method:
 a) Customer gets their Wix store address (e.g., https://example.wixsite.com/my-site)
