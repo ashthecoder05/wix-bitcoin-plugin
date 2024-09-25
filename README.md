@@ -60,7 +60,7 @@
  <img width="397" alt="image" src="https://github.com/user-attachments/assets/41585b33-736e-4363-afd8-c8d9f4159cc4">
 
 2. Copy code from GitHub:
-   Path: Public&Backend/Backend/http-functions.js
+   Path: [Public&Backend/Backend/http-functions.js](https://github.com/ashthecoder05/wix-bitcoin-plugin/blob/main/Public%26Backend/Backend/http-functions.js)
 
 ## 4. Implement the Payment Page
 
@@ -69,7 +69,7 @@
 <img width="441" alt="image" src="https://github.com/user-attachments/assets/fb9a4c16-ae64-4fff-8125-a3b0d482f1d0">
 
 2. Copy code from GitHub:
-   Path: Pagecode/MainPage/PaymentPage.js
+   Path: [Pagecode/MainPage/PaymentPage.js](https://github.com/ashthecoder05/wix-bitcoin-plugin/blob/main/PageCode/MainPage/PaymentPage.js)
 
 3. Update paymentPage.js:
    Line 55: url = 'YOUR_SITE_URL'
