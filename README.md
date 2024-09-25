@@ -44,7 +44,7 @@
  <img width="532" alt="image" src="https://github.com/user-attachments/assets/9ceb7686-5ed4-443f-95ca-bbac92ce1438">
 
 2. Copy code from GitHub:
-   Path: [Public&Backend/Serviceplugin/blockonomics]([https://www.blockonomics.co/](https://github.com/ashthecoder05/wix-bitcoin-plugin/tree/main/Public%26Backend/Serviceplugin/blockonomics)
+   Path: [Public&Backend/Serviceplugin/blockonomics](https://github.com/ashthecoder05/wix-bitcoin-plugin/tree/main/Public%26Backend/Serviceplugin/blockonomics)
    
 3. In blockonomics.js:
    Update line 77: redirectUrl = 'YOUR_SITE_URL'
