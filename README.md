@@ -33,10 +33,14 @@ The process has 3 steps.
 
 <img width="433" alt="image" src="https://github.com/user-attachments/assets/fb379d04-4987-41e8-985b-6600e7a0893a">
 
-- Name the plugin "Blockonomics" and click "Add & Edit Code”
+- Name the plugin "Blockonomics"  
 <img width="433" alt="image" src="https://github.com/user-attachments/assets/da2bc950-35aa-4d8b-a0b2-36787168ec9b">
 
+- click "Add & Edit Code”
+  
+ ## 2. Implement Your Plugin with Custom Code
 
+### Steps: 
 1. Implement your plugin with custom code.
 - In the new plugin folder, edit `blockonomics-config.js` and `blockonomics.js`
 - <img width="532" alt="image" src="https://github.com/user-attachments/assets/9ceb7686-5ed4-443f-95ca-bbac92ce1438">
@@ -45,12 +49,16 @@ The process has 3 steps.
 - Once this is implemented you will be able to see the payment method to be displayed in Setting> Accetpayment it will be visible as below 
 - <img width="1441" alt="image" src="https://github.com/user-attachments/assets/8764f604-2308-45b6-af1f-7b8013e15e80">
 
-2. Implement the callback URL
+## 3. Implement the Callback URL
+
+### Steps:
 - In our the Public&Backend>Backend folder you will find a file called http-fuctions.js you need to create the same file in wix studio as below
 - <img width="397" alt="image" src="https://github.com/user-attachments/assets/41585b33-736e-4363-afd8-c8d9f4159cc4">
 - You need to copy the code from Public&Backend > Backend >  http-fuctions.js file 
 
-3. Implement the payment page
+## 4. Implement the Payment Page
+
+### Steps:
 - In this step, you  will need to create a file as paymentPage.js in the Wix site editor 
 - <img width="441" alt="image" src="https://github.com/user-attachments/assets/fb9a4c16-ae64-4fff-8125-a3b0d482f1d0">
 - Then copy code from the blockonomics github  location at  Pagecode > MainPage > PaymentPage.js
@@ -79,7 +87,9 @@ The process has 3 steps.
 
 
 
-4. Create a database name "blockonomics_config" and "blockonomics_transaction"
+## 5. Create Required Databases
+
+### Database Structures:
 - To create a database you need select Database> Your Collections > + button > Create Collection
 - <img width="497" alt="image" src="https://github.com/user-attachments/assets/1fb44a55-db30-4961-ab34-cf9a7b1c7d06">
 - Need to create two database tables one table "blockonomics_config" with fields for configs records as shown below
