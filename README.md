@@ -5,7 +5,19 @@
 - Bitcoin wallet (e.g., Blockchain.info, Trezor, Electrum, Mycelium)
 
 
-## ### Installation Process:
+## Blockonomics Wix Integration Setup Guide:
+
+## Table of Contents
+
+1. [Create a Payment Provider Plugin](#1-create-a-payment-provider-plugin)
+2. [Implement Your Plugin with Custom Code](#2-implement-your-plugin-with-custom-code)
+3. [Implement the Callback URL](#3-implement-the-callback-url)
+4. [Implement the Payment Page](#4-implement-the-payment-page)
+5. [Create Required Databases](#5-create-required-databases)
+
+## 1. Create a Payment Provider Plugin
+
+### Steps:
 
 **1. Create a Payment Provider Plugin**
 
