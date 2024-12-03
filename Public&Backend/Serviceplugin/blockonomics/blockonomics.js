@@ -97,7 +97,7 @@ const generateNewAddress = webMethod(
     };
 
     const response = await fetch(
-      'https://blockonomics.co/api/new_address?match_callback='/*part of your callback url*/'',
+      'https://blockonomics.co/api/new_address?match_callback='/*part of your callback url*/,
       fetchOptions,
     );
 
