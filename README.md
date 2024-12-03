@@ -56,8 +56,8 @@
 ## 3. Implement the Callback URL
 
 ### Steps:
-1. Create file: http-functions.js at Public&Backend > Backend folder in wix studio as below
- <img width="397" alt="image" src="https://github.com/user-attachments/assets/41585b33-736e-4363-afd8-c8d9f4159cc4">
+1. Create file: http-functions.js at Public&Backend > Backend folder in wix studio as below that is select the "Expose site api" option as shown below 
+![alt text](image.png)
 
 2. Copy code from GitHub:
    Path: [Public&Backend/Backend/http-functions.js](https://github.com/ashthecoder05/wix-bitcoin-plugin/blob/main/Public%26Backend/Backend/http-functions.js)
