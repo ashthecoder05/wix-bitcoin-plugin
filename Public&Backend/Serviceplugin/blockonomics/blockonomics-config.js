@@ -15,11 +15,11 @@ export function getConfig() {
                     title: 'Blockonomics Payments',
                     logos: {
                         white: {
-                            svg: 'https://static.wixstatic.com/shapes/94b5e2_403ceb582027431cb92f38fd18d1843c.svg',
+                            svg: 'https://raw.githubusercontent.com/ashthecoder05/wix-bitcoin-plugin/refs/heads/main/blockonomics_logo.svg',
                             png: 'https://freesvg.org/img/15930333081593032446pitr_Bananas_icon.png'
                         },
                         colored: {
-                            svg: 'https://static.wixstatic.com/shapes/94b5e2_403ceb582027431cb92f38fd18d1843c.svg',
+                            svg: 'https://raw.githubusercontent.com/ashthecoder05/wix-bitcoin-plugin/refs/heads/main/blockonomics_logo.svg',
                             png: 'https://freesvg.org/img/15930333081593032446pitr_Bananas_icon.png'
                         }
                     }
