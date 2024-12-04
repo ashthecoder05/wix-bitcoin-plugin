@@ -57,7 +57,7 @@
 
 ### Steps:
 1. Create file: http-functions.js at Public&Backend > Backend folder in wix studio as below that is select the "Expose site api" option as shown below 
-![alt text](image.png)
+![alt text](image-1.png)
 
 2. Copy code from GitHub:
    Path: [Public&Backend/Backend/http-functions.js](https://github.com/ashthecoder05/wix-bitcoin-plugin/blob/main/Public%26Backend/Backend/http-functions.js)
